@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-[#007ACC]">
+    <div
+        class="container bg-white font-[16px] py-[3em] px-[2.8em] w-[90vw] max-w-[32em] transform translate-x-[-50%] absolute transform left-[50%] top-[1em] rounded-md shadow-lg shadow-black ">
+        <div class="search-container w-[100%] grid grid-cols-9fr grid-cols-3fr gap-[1.2em]">
+            <input class=" font-[1em] p-[0.6em] outline-none border-b-2 border-b-[#202030] " type="text"
+                placeholder="Typ a Dish Name here..." id="user-input">
+            <button class="font-[1em] bg-[#007ACC] border-none font-bold rounded-[0.3em]"
+                id="search-btn">Search</button>
+        </div>
+        <div id="result"></div>
+    </div>
+</body>
+<script src="/script.js"></script>
+
+</html>
