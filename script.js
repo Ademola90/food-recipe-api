@@ -5,7 +5,7 @@ let url = "https://www.themealdb.com/api/json/v1/1/search.php?s="
 
 
 
-searchBtn.addEventListener("click", () => {
+function handleClick() {
     let userInput = document.getElementById("user-input").value;
     if (userInput.length == 0) {
         result.innerHTML = `<p class=" text-center mt-[1.8em] text-[#202030]"> Input field cannot be empty`
@@ -42,10 +42,10 @@ searchBtn.addEventListener("click", () => {
         </div>
         <div id="ingredient-con"></div>
         <div id="recipe" class="absolute hidden bg-white min-h-[100%] w-[100%] top-0 left-0 z-20 rounded-[0.6em]">
-            <button id="hide-recipe" class="font-[1em] relative w-[1.8em] h-[1.8em] bg-[#007ACC] border-none top-[1.2em] left-[90%] rounded-md"> X </button>
+            <button onclick="hideRecipe()" id="hide-recipe" class="font-[1em] relative w-[1.8em] h-[1.8em] bg-[#007ACC] border-none top-[1.2em] left-[90%] rounded-md"> X </button>
             <p class="instructions overflow-wrap-break-word whitespace-pre-wrap whitespace-no-wrap px-[1.2em] py-[2.5em] ">${myMeal.strInstructions}</p>
         </div>
-        <button id="show-recipe" class="font-[1em] relative left-[75%] py-[0.9em] px-[0.6em] bg-[#007ACC] border-none top-[1.5em] rounded-md">View Recipe</button>
+        <button onclick="showRecipe()" id="show-recipe" class="font-[1em] relative left-[75%] py-[0.9em] px-[0.6em] bg-[#007ACC] border-none top-[1.5em] rounded-md">View Recipe</button>
         `;
 
                 let ingredientcon = document.getElementById("ingredient-con")
@@ -78,6 +78,6 @@ searchBtn.addEventListener("click", () => {
 
 
     }
-})
+}
 
 
